@@ -39,10 +39,10 @@ $$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui
 2. Recommender System Performance
 The Hybrid Filtering approach significantly outperformed standalone baselines, achieving the lowest error rates and the best balance of diversity and novelty:
 | Model | MAE | RMSE | Diversity | Novelty |
-| :-- | :-- | :-- | :-- | :-- |
-| Item-based CF | 0.1949 |	0.2415	| 0.0210	| 10.1030|
-| Content-based | 0.1164	| 0.1672	| 0.0114	| 10.9171 |
-| Hybrid Filtering | **0.0452** | **0.0482** | **0.02131** | **0.1086** |
+| :--- | :---: | :---: | :---: | :---: |
+| Item-Based CF | 0.1949 | 0.2415 | 0.0210 | 10.1030 |
+| Content-Based | 0.1164 | 0.1672 | 0.0114 | 10.9171 |
+| **Hybrid Filtering** | **0.0452** | **0.0482** | **0.0213** | **10.1086** |
 
 Impact: The hybrid model reduced MAE by 76.8% compared to Item-Based CF and 61.2% compared to Content-Based Filtering.
 
