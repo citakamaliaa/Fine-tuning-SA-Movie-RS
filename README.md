@@ -21,7 +21,7 @@ This study utilizes three primary datasets:
 ## Methodology & Architecture
 The system follows the pipeline illustrated below:
 1. **Text Preprocessing**: Cleaning (emoticons, links), tokenization, and stemming.
-2. **Sentiment Classification: Fine-tuning RoBERTa to classify reviews and generate sentiment scores.
+2. **Sentiment Classification**: Fine-tuning RoBERTa to classify reviews and generate sentiment scores.
 3. **Rating Normalization**: Applying Min-Max normalization to align sentiment scores with the recommendation rating scale (e.g., 1-5).
    
 $$s_{ui}^{*}=\frac{s_{ui}-s_{min}}{s_{max}-s_{min}}\times(r_{max}-r_{min})+r_{min}$$
