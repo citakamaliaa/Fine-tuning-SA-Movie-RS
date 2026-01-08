@@ -6,32 +6,34 @@ This repository contains the implementation of a hybrid movie recommendation sys
 The core innovation lies in converting unstructured text reviews into sentiment-based pseudo-ratings to enrich sparse user-item interaction data. The final recommendations are generated using a Weighted Hybrid Model that combines Collaborative Filtering (CF) and Content-Based Filtering (CBF).
 
 ## Key Features
-- Sentiment-Based Pseudo-Ratings: Transforms unstructured social media reviews into implicit numerical ratings (scaled 0-5) to mitigate data sparsity.
-- Transformer Fine-Tuning: Implements fine-tuned versions of BERT, RoBERTa, and DistilBERT for high-accuracy sentiment classification.
-- Weighted Hybrid Architecture: Fuses Item-Based CF and Content-Based Filtering using an optimized weighting parameter ($\alpha$) to balance accuracy, diversity, and novelty.
-- Cold-Start Robustness: Proven effectiveness in providing relevant recommendations for users with limited or no prior interaction history.
+- **Sentiment-Based Pseudo-Ratings**: Transforms unstructured social media reviews into implicit numerical ratings (scaled 0-5) to mitigate data sparsity.
+- **Transformer Fine-Tuning**: Implements fine-tuned versions of BERT, RoBERTa, and DistilBERT for high-accuracy sentiment classification.
+- **Weighted Hybrid Architecture**: Fuses Item-Based CF and Content-Based Filtering using an optimized weighting parameter ($\alpha$) to balance accuracy, diversity, and novelty.
+- **Cold-Start Robustness**: Proven effectiveness in providing relevant recommendations for users with limited or no prior interaction history.
 
 ## Datasets
 This study utilizes three primary datasets:
-1. Movie Dataset: Metadata for 854 films (genres, descriptions, keywords) collected from IMDb.
-2. Reviews Dataset: 34,086 tweets/reviews collected from X (Twitter) using Indonesian search queries translated to English.
-3. Derived Rating Matrix: A generated user-item matrix where explicit ratings are replaced/augmented by sentiment scores derived from fine-tuned RoBERTa model.
+1. **Movie Dataset**: Metadata for 854 films (genres, descriptions, keywords) collected from IMDb.
+2. **Reviews Dataset**: 34,086 tweets/reviews collected from X (Twitter) using Indonesian search queries translated to English.
+3. **Derived Rating Matrix**: A generated user-item matrix where explicit ratings are replaced/augmented by sentiment scores derived from fine-tuned RoBERTa model.
 
 
 ## Methodology & Architecture
 The system follows the pipeline illustrated below:
-1. Text Preprocessing: Cleaning (emoticons, links), tokenization, and stemming.
-2. Sentiment Classification: Fine-tuning RoBERTa to classify reviews and generate sentiment scores.
-3. Rating Normalization: Applying Min-Max normalization to align sentiment scores with the recommendation rating scale (e.g., 1-5).
+1. **Text Preprocessing**: Cleaning (emoticons, links), tokenization, and stemming.
+2. **Sentiment Classification: Fine-tuning RoBERTa to classify reviews and generate sentiment scores.
+3. **Rating Normalization**: Applying Min-Max normalization to align sentiment scores with the recommendation rating scale (e.g., 1-5).
    
 $$s_{ui}^{*}=\frac{s_{ui}-s_{min}}{s_{max}-s_{min}}\times(r_{max}-r_{min})+r_{min}$$
 
-5. Hybrid Filtering: Calculating the final predicted rating using the weighted linear combination of CF and CBF:
+5. **Hybrid Filtering**: Calculating the final predicted rating using the weighted linear combination of CF and CBF:
    
-$$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui}^{CF}$$(Where $\alpha=0.1$ yielded the best performance).
+$$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui}^{CF}$$
+
+(Where $\alpha=0.1$ yielded the best performance).
 
 ## Experimental Results
-1. Sentiment Analysis Performance
+1. **Sentiment Analysis Performance**
    
 | Model | Accuracy |
 | :--- | :--- |
@@ -40,7 +42,7 @@ $$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui
 | Fine-tune RoBERTa | **90.11%** |
 | Fine-tune DistilBERT | 89.33% |
 
-2. Recommender System Performance
+2. **Recommender System Performance**
 The Hybrid Filtering approach significantly outperformed standalone baselines, achieving the lowest error rates and the best balance of diversity and novelty:
 
 | Model | MAE | RMSE | Diversity | Novelty |
