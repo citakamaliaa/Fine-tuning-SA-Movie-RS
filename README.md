@@ -23,8 +23,11 @@ The system follows the pipeline illustrated below:
 1. Text Preprocessing: Cleaning (emoticons, links), tokenization, and stemming.
 2. Sentiment Classification: Fine-tuning RoBERTa to classify reviews and generate sentiment scores.
 3. Rating Normalization: Applying Min-Max normalization to align sentiment scores with the recommendation rating scale (e.g., 1-5).
+   
 $$s_{ui}^{*}=\frac{s_{ui}-s_{min}}{s_{max}-s_{min}}\times(r_{max}-r_{min})+r_{min}$$
-4. Hybrid Filtering: Calculating the final predicted rating using the weighted linear combination of CF and CBF:
+
+5. Hybrid Filtering: Calculating the final predicted rating using the weighted linear combination of CF and CBF:
+   
 $$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui}^{CF}$$(Where $\alpha=0.1$ yielded the best performance).
 
 ## Experimental Results
@@ -61,6 +64,7 @@ cd your-repo-name
 
 ## Citation
 If you use this code or dataset in your research, please cite our paper:
+
 @inproceedings{citakamalia2025finetuning,
   title={Fine-Tuning Transformers for Sentiment Analysis for Addressing the Cold Start Problem in Movie Recommender Systems},
   author={Citakamalia and Setiawan, Erwin Budi},
