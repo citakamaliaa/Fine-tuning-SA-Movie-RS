@@ -64,13 +64,25 @@ cd your-repo-name
 - Open the Sentiment Analysis notebook (Fine_tune_BERT.ipynb) and other related source file to train/evaluate the Transformer models.
 - Open Recommender System notebook (Collaborative Filtering, Content-based Filtering, and Hybrid Filtering) ex: CF_BERT.ipynb or CBF.ipynb or Hybrid_Filtering.ipynb to run the hybrid filtering algorithm and generate recommendations.
 
+## Publication
+**Fine-Tuning Transformers for Sentiment Analysis for Addressing the Cold Start Problem in Movie Recommender Systems**
+
+[![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-Read_Paper-00629B?style=for-the-badge&logo=ieee&logoColor=white)](https://ieeexplore.ieee.org/document/11290741)
+
 ## Citation
 If you use this code or dataset in your research, please cite our paper:
 
-@inproceedings{citakamalia2025finetuning,
-  title={Fine-Tuning Transformers for Sentiment Analysis for Addressing the Cold Start Problem in Movie Recommender Systems},
-  author={Citakamalia and Setiawan, Erwin Budi},
-  booktitle={2025 3rd International Conference on Software Engineering and Information Technology (ICOSEIT)},
-  year={2025},
-  organization={IEEE}
+```bibtex
+@inproceedings{Citakamalia2025,
+  title = {Fine-Tuning Transformers for Sentiment Analysis for Addressing the Cold Start Problem in Movie Recommender Systems},
+  url = {http://dx.doi.org/10.1109/ICoSEIT67010.2025.11290741},
+  DOI = {10.1109/icoseit67010.2025.11290741},
+  booktitle = {2025 3rd International Conference on Software Engineering and Information Technology (ICoSEIT)},
+  publisher = {IEEE},
+  author = {Citakamalia,  Citakamalia and Setiawan,  Erwin Budi},
+  year = {2025},
+  month = oct,
+  pages = {1–6}
 }
+```
+
