@@ -1,0 +1,23 @@
+# Data Manipulation & Math
+numpy>=1.21.0
+pandas>=1.3.0
+
+# Machine Learning & Metrics
+scikit-learn>=1.0.2      # For TF-IDF, Cosine Similarity, MAE, RMSE, split
+
+# Deep Learning & Transformers
+torch>=1.10.0            # Backend for Transformers (or tensorflow)
+transformers>=4.15.0     # For BERT, RoBERTa, DistilBERT models
+accelerate>=0.20.0       # Optimization for Transformer training
+
+# Natural Language Processing
+nltk>=3.6.0              # For English stopwords, tokenization
+Sastrawi>=1.0.1          # For Indonesian stemming (since original keywords were ID)
+imbalanced-learn>=0.8.0  # For SMOTE (handling imbalance)
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Utilities
+tqdm>=4.60.0             # Progress bars for training loops
