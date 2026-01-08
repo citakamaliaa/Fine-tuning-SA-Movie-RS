@@ -29,6 +29,7 @@ $$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui
 
 ## Experimental Results
 1. Sentiment Analysis Performance
+   
 | Model | Accuracy |
 | :--- | :--- |
 | CNN-LSTM | 86.00% |
@@ -38,6 +39,7 @@ $$\hat{r}_{ui}^{hybrid}=\alpha\cdot\hat{r}_{ui}^{CBF}+(1-\alpha)\cdot\hat{r}_{ui
 
 2. Recommender System Performance
 The Hybrid Filtering approach significantly outperformed standalone baselines, achieving the lowest error rates and the best balance of diversity and novelty:
+
 | Model | MAE | RMSE | Diversity | Novelty |
 | :--- | :---: | :---: | :---: | :---: |
 | Item-Based CF | 0.1949 | 0.2415 | 0.0210 | 10.1030 |
